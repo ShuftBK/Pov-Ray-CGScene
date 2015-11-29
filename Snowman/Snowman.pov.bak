@@ -1,0 +1,62 @@
+                                                   
+#include "colors.inc"
+#include "textures.inc"
+#include "shapes.inc"
+#include "metals.inc"
+#include "glass.inc"
+#include "woods.inc"            
+              
+camera { 
+    location <10,2,0>
+    angle 50
+    look_at <0, 0, 0>
+    }
+    
+light_source {
+    <10,10,-10>
+    color rgb<1,1,1,>*2
+    }      
+    
+    
+object {
+    Plane_XZ
+    pigment {checker color White,color Black} 
+    translate <0, -1 , 0>
+    }
+           
+union {    
+object {
+   sphere {<0 ,0 ,0> 1.25}
+    pigment { color  White }
+   }
+       
+object {
+   sphere {<0 ,1.5 ,0> 1}
+   pigment { color  White }
+   }
+    
+object {
+    Disk_Y   
+    scale <0.1, 1, 0.1>   
+    rotate <75, 0, 0> 
+    translate <0, 0.75, 1.5> 
+    texture{ T_Wood5} 
+    }
+    
+object {
+    Disk_Y   
+    scale <0.1, 1, 0.1>   
+    rotate <-75, 0, 0> 
+    translate <0, 0.75, -1.5> 
+    texture{ T_Wood5} 
+    }     
+    
+
+object {
+    cone {<0, 0, 0>,0.5,<0, 1, 0>,0.35}
+    pigment { color Red }
+    translate <0, 2, 0>
+    }
+    translate < -10, 0, 0>
+    
+    }
